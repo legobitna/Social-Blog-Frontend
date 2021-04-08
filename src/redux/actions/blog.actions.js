@@ -66,17 +66,6 @@ const createReview = (blogId, reviewText) => async (dispatch) => {
 const createNewBlog = (title, content, images) => async (dispatch) => {
   dispatch({ type: types.CREATE_BLOG_REQUEST, payload: null });
   try {
-    // For uploading file manually
-    // const formData = new FormData();
-    // formData.append("title", title);
-    // formData.append("content", content);
-    // if (images && images.length) {
-    //   for (let index = 0; index < images.length; index++) {
-    //     formData.append("images", images[index]);
-    //   }
-    // }
-    // const res = await api.post("/blogs", formData);
-
     // Upload images using cloudinary already
     const res = await api.post("/blogs", { title, content, images });
 
@@ -94,9 +83,6 @@ const createNewBlog = (title, content, images) => async (dispatch) => {
 const updateBlog = (blogId, title, content, images) => async (dispatch) => {
   dispatch({ type: types.UPDATE_BLOG_REQUEST, payload: null });
   try {
-    // let formData = new FormData();
-    // formData.set("title", title);
-    // formData.set("content", content);
     const res = await api.put(`/blogs/${blogId}`, { title, content, images });
 
     dispatch({
