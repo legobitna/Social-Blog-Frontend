@@ -1,7 +1,4 @@
----
-title: FTW Week 6 - Social Blog
-tags: CoderSchool, FTW, Project
----
+
 
 # Social Blog app
 
